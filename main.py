@@ -31,7 +31,7 @@ def write_config(config: dict) -> None:
 async def index(request: Request):
     config = load_config()
     return templates.TemplateResponse(
-        "index.html", {"request": request, "games": config["games"]}
+        request, "index.html", {"games": config["games"]}
     )
 
 
@@ -39,7 +39,7 @@ async def index(request: Request):
 async def settings_page(request: Request):
     config = load_config()
     return templates.TemplateResponse(
-        "settings.html", {"request": request, "games": config["games"]}
+        request, "settings.html", {"games": config["games"]}
     )
 
 

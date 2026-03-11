@@ -4,3 +4,7 @@ python-multipart
 jinja2
 pystray
 Pillow
+
+# dev/test
+pytest
+httpx
