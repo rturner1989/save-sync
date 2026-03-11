@@ -92,7 +92,8 @@ async def download_save(game_id: int):
     srm_path = Path(game["retroarch_path"])
     if not srm_path.exists():
         return JSONResponse(
-            {"error": f"Save file not found: {srm_path}"}, status_code=404
+            {"error": f"Save file not found. Check the path in Settings: {srm_path}"},
+            status_code=404,
         )
 
     # Copy to a temp file with .sav extension so the browser names it correctly
